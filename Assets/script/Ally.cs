@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 class AllyData
 {
@@ -8,6 +9,12 @@ class AllyData
 }
 
 public class Ally : MonoBehaviour {
+
+    public Image allyImage;
+    public Text allyName;
+    public Text allySpellText;
+
+    protected spell AllySpell;
 
     //public Dictionary<string, AllyData> AllyList = new Dictionary<string, AllyData>()
     //{
