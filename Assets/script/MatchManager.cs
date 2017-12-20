@@ -117,15 +117,12 @@ public class MatchManager : MonoBehaviour {
             //one of the ally objects in the level
             //and set its stats accordingly.
             Ally allySetup = ally_phs[indx].GetComponent<Ally>();
-
             if( allySetup.setAlly(s) == false)
             {
                 Debug.LogError("Error setting up ally: " + s);
             }
             indx++;
-
         }       
-
     }
 
     void OnEnable()
