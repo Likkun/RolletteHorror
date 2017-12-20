@@ -1,0 +1,16 @@
+[
+	{
+		"name", "Rosaline",
+			"spell1", "KineticBurst",
+			"spell1_text", "blue_Yog|red_Kholw|green_Dojhu",
+			"HP", "10",
+			"thumbnail", "RedHeadGirl"
+	},
+	{
+		"name", "Dark Girl",
+			"spell1", "Black Mambda",
+			"spell1_text", "blue_Yog|red_Kholw|green_Dojhu",
+			"HP", "5",
+			"thumbnail", "DarkGirl"
+	}
+]

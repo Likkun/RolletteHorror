@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
     public static List<string> SelectedAllies = null;
 
     void Awake()
-    {
+    {        
 
         if( instance == null)
         {
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
-
+        SelectedAllies = new List<string>();
         DontDestroyOnLoad(gameObject);
     }
 

@@ -18,19 +18,6 @@ public class spell
 
 }
 
-public class PlayerAlly
-{
-    //A list of allies should be given to the match manager when the match begins
-    //the match manager should refrence a list to gather all the required spell
-    //and effects from the allies.
-    public List<KeyValuePair<string, string>> spellString1 { get; set; }
-    public List<KeyValuePair<string, string>> spellString2 { get; set; }
-    public string element { get; set; }
-    public string allyID { get; set; }
-    public float cooldownSpell1 { get; set; }
-    public float cooldownSpell2 { get; set; }
-}
-
 public class MatchManager : MonoBehaviour {
 
     public delegate void UseSymbol();
@@ -55,6 +42,10 @@ public class MatchManager : MonoBehaviour {
     static List<spell> _mseals;
     static spell restoreSpell;
 
+    // a List of the players allies
+    //the match should get passed a few Ally Id's
+    static List<Ally> _mAllies;
+
     void Awake()
     {
         if( instance == null)
@@ -70,6 +61,8 @@ public class MatchManager : MonoBehaviour {
 
         //we are not destroyed so create the list of combinations that must be met
         _mseals = new List<spell>();
+
+        GameObject[] ally_phs = GameObject.FindGameObjectsWithTag("AllyPlaceHolder");        
 
         spell temp = new spell
         {
@@ -109,19 +102,29 @@ public class MatchManager : MonoBehaviour {
         temp.spellString.Add(new KeyValuePair<string, string>("blue", "Yog"));
         _mseals.Add(temp);
 
-
-        //Here we should look for a list of allies in the GameManager
-        if( GameManager.SelectedAllies != null &&
-            GameManager.SelectedAllies.Count > 0)
+        //TEST
+        //GameManager.SelectedAllies = new List<string>();
+        //GameManager.SelectedAllies.Add("1");
+        List<string> selectedAllies = new List<string>();
+        selectedAllies.Add("1");
+        selectedAllies.Add("2");
+        selectedAllies.Add("3");
+        selectedAllies.Add("4");
+        int indx = 0;
+        foreach (string s in selectedAllies)
         {
-            //list of allies should be strings that will match 
-            //allies ids in a list
-            //using the ID from the game manager
-            //create a new insatnce of the ally with proper
-            //stats/spells
+            //rather than a new ally, this needs to refrence 
+            //one of the ally objects in the level
+            //and set its stats accordingly.
+            Ally allySetup = ally_phs[indx].GetComponent<Ally>();
 
-        }
+            if( allySetup.setAlly(s) == false)
+            {
+                Debug.LogError("Error setting up ally: " + s);
+            }
+            indx++;
 
+        }       
 
     }
 

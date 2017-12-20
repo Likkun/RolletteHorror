@@ -1,0 +1,38 @@
+[
+	
+		{
+			"name":"Rosaline",
+			"spell1":"KineticBurst",
+			"spell1_text":"blue_Yog|red_Kholw|green_Dojhu",
+			"HP":"10",
+			"thumbnail":"RedHeadGirl",
+			"index":"1"
+		},
+			
+		{
+			"name":"Dark Girl",
+			"spell1": "Black Mambda",
+			"spell1_text": "blue_Yog|red_Kholw|green_Dojhu",
+			"HP": "5",
+			"thumbnail": "DarkGirl",
+			"index":"2"
+		},
+		{
+			"name":"Ice Girl",
+			"spell1": "Black Mambda",
+			"spell1_text": "blue_Yog|red_Kholw|green_Dojhu",
+			"HP": "5",
+			"thumbnail": "IceGirl",
+			"index":"3"
+		},
+		{
+			"name":"Wolf",
+			"spell1": "Black Mambda",
+			"spell1_text": "blue_Yog|red_Kholw|green_Dojhu",
+			"HP": "5",
+			"thumbnail": "Wolf",
+			"index":"4"
+		}
+		
+
+]
